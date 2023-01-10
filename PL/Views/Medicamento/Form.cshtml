@@ -1,0 +1,99 @@
+﻿@model ML.Medicamento
+@{
+    ViewData["Title"] = "Form";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">  
+        <h1>Form</h1>
+    </div>
+
+    <div class="row">
+        @using(Html.BeginForm("Form", "Medicamento", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div>
+
+                <div class="row">
+                             <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.IdMedicamento)
+                                 @Html.TextBoxFor(model => model.IdMedicamento, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.IdMedicamento)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.Nombre)
+                                 @Html.TextBoxFor(model => model.Nombre, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.Nombre)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.Descripcion)
+                                 @Html.TextBoxFor(model => model.Descripcion, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.Descripcion)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.FechaCaducidad)
+                                 @Html.TextBoxFor(model => model.FechaCaducidad, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.FechaCaducidad)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.PreciUnitario)
+                                 @Html.TextBoxFor(model => model.PreciUnitario, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.PreciUnitario)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.Stock)
+                                 @Html.TextBoxFor(model => model.Stock, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.Stock)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.Proveedor.IdProveedor)
+                                 @Html.TextBoxFor(model => model.Proveedor.IdProveedor, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.Proveedor.IdProveedor)
+
+
+                            </div>
+
+                            <div class= "col-lg2 form-gruop">
+                                 @Html.LabelFor(model => model.Proveedor.Nombre)
+                                 @Html.TextBoxFor(model => model.Proveedor.Nombre, new { @class = "form-grupo"})
+                                 @Html.ValidationMessageFor(model => model.Proveedor.Nombre)
+
+
+                            </div>
+
+
+                              <div class= "col-lg2 form-gruop">
+                                
+                                  <input class="btn btn-primary" type="submit" value="Agregar" >
+
+                            </div>
+
+
+                 </div>
+
+           </div>
+
+        }
+    </div>
+
+</div>
+
+

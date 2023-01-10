@@ -1,0 +1,70 @@
+﻿@model ML.Medicamento
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        
+            <h1>Medicamentos</h1>
+
+            <div class="col 12">
+                 @Html.ActionLink("+", "Form", "Medicamento", htmlAttributes: new { @class = "btn btn-primary" })
+            </div>
+
+    </div>
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>IdMedicamento</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Fecha Caducidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Stock </th>
+                    <th>IdProveedor</th>
+                    <th>NombreProveedor</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+
+
+                
+
+            </thead>
+
+
+
+            <tbody>
+                 @foreach (ML.Medicamento medicamento in Model.Medicamentos)
+                {
+                    <tr>
+                    
+                    <td>@medicamento.IdMedicamento</td>
+                    <td>@medicamento.Nombre</td>
+                    <td>@medicamento.Descripcion</td>
+                    <td>@medicamento.FechaCaducidad</td>
+                    <td>@medicamento.PreciUnitario</td>
+                    <td>@medicamento.Stock</td>
+                    <td>@medicamento.Proveedor.IdProveedor</td>
+                    <td>@medicamento.Proveedor.Nombre</td>
+                    <td><a class="btn btn-primary bi bi-pencil-square" href="@Url.ActionLink("Form", "Medicamento", new { IdMedicamento = @medicamento.IdMedicamento}  )"></a></td>
+                    <td><a class="btn bi bi-pencil-square" ></a></td>
+                
+
+
+                </tr>
+               }
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
